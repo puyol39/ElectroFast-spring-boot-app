@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: electrofast
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/electro_fast_db
+    username: root
+    password: dora2737
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+    
+  sql:
+    init:
+      mode: always
+    
+  thymeleaf:
+    cache: false

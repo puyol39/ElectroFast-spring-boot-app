@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>購入完了 - ElectroFast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/">ElectroFast ⚡️</a>
+    </div>
+</nav>
+
+<div class="container text-center mt-5">
+    <div class="card shadow-sm p-5">
+        <div class="card-body">
+            <h1 class="display-4 text-success mb-4">🎉 ご購入ありがとうございます！</h1>
+            
+            <div th:if="${message}" class="alert alert-success border-0 bg-transparent fs-5" th:text="${message}">
+                    購入完了メッセージ
+                </div>
+                
+            <p class="lead mb-4">
+                注文が確定しました。<br>
+                ご登録の住所へ最短で配送手配を行います。
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="/" class="btn btn-primary btn-lg px-4 gap-3">トップへ戻る</a>
+                <a href="/orders/history" class="btn btn-outline-secondary btn-lg px-4">注文履歴を見る</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

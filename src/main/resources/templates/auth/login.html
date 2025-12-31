@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン - ElectroFast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h3 class="text-center mb-4">ログイン</h3>
+            
+            <div th:if="${param.registered}" class="alert alert-success">
+                会員登録が完了しました。ログインしてください。
+            </div>
+            <div th:if="${param.error}" class="alert alert-danger">
+                メールアドレスまたはパスワードが間違っています。
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form th:action="@{/auth/login}" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">メールアドレス</label>
+                            <input type="email" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">パスワード</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">ログイン</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="/auth/register">新規会員登録はこちら</a> | <a href="/">トップへ戻る</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
